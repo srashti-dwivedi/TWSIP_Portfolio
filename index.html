@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4aa66595e5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+               <h1 class="logo">Srashti</h1>
+                <ul class="sideMenu">
+                    
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                     <li><a href="#">projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-window-close" onclick="closeMenu()"></i>
+                </ul>
+                <i class="fas fa-bars" aria-hidden="true" onclick="openMenu()"></i>
+               
+
+            </nav>
+            <div class="header-text">
+                <p>Web Devloper</p>
+                <h1>Hi, I'm <span>Srashti</span><br> Dwivedi from India</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------About-------------------------------- -->
+    <div id="about">
+        <div class="container">
+              <div class="row">
+                <div class="col1">
+                    <img src="image1.jpg">
+                </div>
+                <div class="col2">
+                    <h1 class="sub-title">About Me</h1>
+                    <P>
+                        "Hey, I'm Srashti Dwivedi.
+                         I'm studying Computer Applications (BCA).
+                         I really love building websites and apps.
+                          I've been learning a bunch of things 
+                         like HTML, JavaScript, and CSS, 
+                        which are the basics. Then, 
+                        I learned more advanced stuff like Tailwind CSS for
+                        
+                        making things look nice.
+
+                           But my favorite
+
+thing is using React.js. It's awesome for making websites fun and interactive. 
+I've been practicing a lot and even made some cool projects with it.
+
+So, in short, I'm really passionate about
+ web development and have been learning a lot of cool stuff like HTML, JavaScript,
+  CSS, Tailwind CSS, Node.js, Express.js, and React.js. I'm super excited about 
+  the chance to use these skills in a web development role."
+
+                    </P>
+             
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links "onclick='opentab("education")'>Education</p>
+                        
+                    </div>
+
+                    <div class="tab-content active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Devlopment</span><br>Web app Devloper</li>
+                            
+
+                        </ul>
+                    </div>
+                    <div class="tab-content " id="education">
+                        <ul>
+                            <li><span>2022-Pursuing</span><br>Bachelor's of Computer Application</li>
+                            <li><span>2021-2022</span><br>12th with 83% with PCM Subject at Chitrakoot Inter College</li>
+                            <li><span>2019-2020</span><br> 10th with 85% from Sarswati Balika Vidya Mandir</li>     
+                        </ul>
+                    </div>
+
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+
+    <!--------------------------Contact---------------------------------  -->
+   <div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                 <h1 class="sub-title">Contact Me</h1>
+              <p><i class="fas fa-paper-plane"></i>srashtidwivedi4@gmail.com</p> 
+              <div class="social-icons">
+                <a href="https://www.linkedin.com/in/srashti-dwivedi-37b396272?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B3CKBaERjQuOOlU0suE%2FhVg%3D%3D"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/srashti-dwivedi"><i class="fa-brands fa-github"></i></a>
+               
+              </div>  
+                <div  class="btn"><a href="#" download>Download CV</a></div>
+            </div>
+            <div class="contact-right">
+              
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Emali" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message" ></textarea>
+                    <button type="submit" class="btn bt2">Submit</button>
+                   </form> 
+                   <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        copyright Srashti Dwivedi <i class="fa-solid fa-heart"></i>
+    </div>
+   </div>
+    <script src="script.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxj-eqSwpAdwQl4IaIGNdbr8TjY9wBxZnbepxEVdn_yt174C-xNXoSK3i7mMh4W5pGd/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById('msg')
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {msg.innerHTML='Message Sent Successfully'
+                setTimeout(()=>{
+                    msg.innerHTML=''
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
