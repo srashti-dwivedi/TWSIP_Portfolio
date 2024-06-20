@@ -367,6 +367,11 @@ nav .fas{
         font-size: 40px;
 
     }
+    .project-list{
+        display: grid;
+        grid-template-columns: auto;
+    }
+   
     .col1, .col2{
         flex-basis: 100%;
     }
