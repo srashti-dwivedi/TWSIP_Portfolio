@@ -256,6 +256,10 @@ nav .fas{
 #project{
     padding: 50px 0;
 }
+#certificate{
+    padding: 50px 0;
+}
+
 .project-list{
     display: grid;
     grid-template-columns:auto auto auto;
@@ -318,6 +322,7 @@ nav .fas{
 .pro:hover .layer{
     height: 100%;
 }
+
 
 /*  css for small screen */
 
